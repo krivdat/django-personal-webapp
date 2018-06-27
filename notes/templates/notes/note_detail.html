@@ -1,0 +1,14 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+
+<h4><a href="{% url 'note-list' %}">{{ note.title }}</a></h4>
+<h6> Added: {{ note.date_created }}</h6>
+<h6> Category: {{ note.category }}</h6>
+
+<div class = "container">
+    {{ note.text|safe|linebreaks}}
+</div>
+<br><br>
+
+{% endblock %}

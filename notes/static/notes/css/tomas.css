@@ -1,0 +1,36 @@
+html,body {
+  height: 100%;
+  max-width: 100%;
+  background-color:#f6f6f6;
+  overflow-x: hidden;
+}
+
+.header-fixed {
+  position: fixed;
+  z-index: 998;
+  height: 36px;
+  line-height: 36px;
+  width: 100%;
+  background-color: #333366;
+  color: #ffffff;
+  padding: 3px 15px;
+}
+
+.header-fixed span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+    
+.header-fixed a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.header-fixed a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}

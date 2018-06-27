@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Thomas's personal notebook</title>
+	<meta charset="utf-8" />
+	{% load static %}
+	<link rel='stylesheet' href="{% static 'notes/css/bootstrap.min.css' %}" type='text/css' />
+	<link rel='stylesheet' href="{% static 'notes/css/tomas.css' %}" type='text/css' />
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+</head>
+
+<body class="body">
+
+<div class="header-fixed">
+    <span><a href="/notes/">Thomas's personal notebook</a></span>
+</div>
+
+<div class="container-fluid" style="min-height: 85%; padding-top:40px" >
+
+    <div>
+        <br>
+       {% block content %}
+       {% endblock %}
+    </div>
+
+</div>
+
+<footer>
+    <div class="container-fluid" style="margin-left:15px">
+        <p>
+        <a href="/admin/">Admin</a> |
+        <a href="https://www.linkedin.com/in/tomas-krivda-01574734" target="_blank">LinkedIn</a> |
+        <a href="https://twitter.com/tomas_krivda" target="_blank">Twitter</a> |
+        <a href="https://www.reddit.com/user/krivdat" target="_blank">Redit</a></p>
+    </div>
+</footer>
+
+</body>
+
+</html>
