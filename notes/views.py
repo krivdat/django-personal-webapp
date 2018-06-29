@@ -8,19 +8,25 @@ class NoteList(ListView):
     model = Note
     context_object_name = 'my_notes'
 
+
 class NoteDetail(DetailView):
     model = Note
+  
                     
 class NoteCreate(CreateView):
     model = Note
     fields = [
-        'author',
         'title',
         'text',
         'category',
         'hidden',
     ]
-
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+        
+        
 class NoteUpdate(UpdateView):
     model = Note
     fields = [
@@ -30,6 +36,7 @@ class NoteUpdate(UpdateView):
         'category',
         'hidden',
     ]
+
 
 class NoteDelete(DeleteView):
     model = Note
