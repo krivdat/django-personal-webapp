@@ -4,7 +4,13 @@
     <h2>Notes</h2>
     {% for note in my_notes %}
         <div class="list-group">
-            {{ note.date_created|date:"d.m.Y" }}<a href="{{note.id}}" class="list-group-item">{{ note.title }}</a>
+            <p>
+            {{ note.date_created|date:"d.m.Y" }}
+            <a href="{% url 'note-delete' pk=note.id %}" >
+              <span style="float:right"><button type="button" class="btn btn-basic btn-sm">X</button></span>
+            </a>
+            <a href="{{note.id}}" class="list-group-item">{{ note.title }}</a>
+            </p>
         </div>
     {% endfor %}
     <br>
