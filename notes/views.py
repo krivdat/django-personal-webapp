@@ -1,19 +1,20 @@
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Note
 
 
-class NoteList(ListView):
+class NoteList(LoginRequiredMixin, ListView):
     model = Note
     context_object_name = 'my_notes'
 
 
-class NoteDetail(DetailView):
+class NoteDetail(LoginRequiredMixin, DetailView):
     model = Note
-  
-                    
-class NoteCreate(CreateView):
+
+
+class NoteCreate(LoginRequiredMixin, CreateView):
     model = Note
     fields = [
         'title',
@@ -21,13 +22,13 @@ class NoteCreate(CreateView):
         'category',
         'hidden',
     ]
-    
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-        
-        
-class NoteUpdate(UpdateView):
+
+
+class NoteUpdate(LoginRequiredMixin, UpdateView):
     model = Note
     fields = [
         'author',
@@ -38,6 +39,6 @@ class NoteUpdate(UpdateView):
     ]
 
 
-class NoteDelete(DeleteView):
+class NoteDelete(LoginRequiredMixin, DeleteView):
     model = Note
     success_url = reverse_lazy('note-list')
