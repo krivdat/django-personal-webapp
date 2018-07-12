@@ -9,7 +9,6 @@ class NoteList(LoginRequiredMixin, ListView):
     model = Note
     context_object_name = 'my_notes'
     def get_queryset(self):
-        if 
         return Note.objects.filter(author=self.request.user)
 
 
