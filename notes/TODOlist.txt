@@ -1,0 +1,5 @@
+- get rid of bootstrap, adjust own css
+- change layout of notes list - make items more compact and smaller
+- add "+" icon to add new note to the upper-right corner (right side of header)
+- make "delete" button at each item in notes list look nicer
+- add "modify" icon to each item in notes list (next to delete button)

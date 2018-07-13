@@ -6,30 +6,28 @@
 	<meta charset="utf-8" />
 	{% load static %}
 	<link rel="shortcut icon" href="{%  static 'notes/images/favicon.ico' %}">
-	<link rel='stylesheet' href="{% static 'notes/css/bootstrap.min.css' %}" type='text/css' />
+<!--<link rel='stylesheet' href="{% static 'notes/css/bootstrap.min.css' %}" type='text/css' /> -->
 	<link rel='stylesheet' href="{% static 'notes/css/tomas.css' %}" type='text/css' />
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
 
 </head>
 
-<body class="body">
+<body>
 
 <div class="header-fixed">
     <span><a href="/notes/">Thomas's personal notebook</a></span>
+    <span style="float:right"><a href="{% url 'note-add' %}">[+]</a></span>
 </div>
 
-<div class="container-fluid" style="min-height: 85%; padding-top:40px" >
+<div class="container-main">
 
-    <div>
-        <br>
-       {% block content %}
-       {% endblock %}
-    </div>
+   {% block content %}
+   {% endblock %}
 
 </div>
 
 <footer>
-    <div class="container-fluid" style="margin-left:15px">
+    <div class="footer">
         <p>
         <a href="/admin/">Admin</a> |
         <a href="https://www.linkedin.com/in/tomas-krivda-01574734" target="_blank">LinkedIn</a> |
