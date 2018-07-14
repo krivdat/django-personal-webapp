@@ -2,11 +2,22 @@
 
 {% block content %}
 
-<h2><a href="{% url 'note-list' %}">{{ note.title }}</a></h2>
-<h4> Added: {{ note.date_created }}</h4>
-<h4> Category: {{ note.category }}</h4>
+<div class="detail-view">
 
-{{ note.text|safe|linebreaks}}
+  <h2><a href="{% url 'note-list' %}">{{ note.title }}</a></h2>
+  <a href="{% url 'note-delete' pk=note.id %}" >
+    <span style="float:right"><button type="button" class="buttons-in-list">del</button></span>
+  </a>
+  <a href="{% url 'note-update' pk=note.id %}" >
+    <span style="float:right"><button type="button" class="buttons-in-list">edit</button></span>
+  </a>
+
+  <h4> Added: {{ note.date_created }}</h4>
+  <h4> Category: {{ note.category }}</h4>
+
+  {{ note.text|safe|linebreaks}}
+
+</div>
 
 <br><br>
 

@@ -23,15 +23,25 @@ html, body {
   padding: 0 0.5em;
 }
 
-.header-fixed a {
-  color: #ffffff;
+a {
   text-decoration: none;
   background-color: transparent;
 }
 
-.header-fixed a:hover {
+a:hover {
+  text-decoration: underline;
+}
+
+.header-fixed a {
   color: #ffffff;
+}
+
+.header-fixed a:hover {
   text-decoration: none;
+}
+
+.detail-view a {
+  color: #333333;
 }
 
 .container-main {
@@ -45,7 +55,7 @@ html, body {
 
 .buttons-in-list {
     margin-left: 1em;
-    font-size: x-small;
+    font-size: small;
 }
 
 .date-in-list {
@@ -59,5 +69,5 @@ html, body {
 }
 
 .notes-list-item a {
-    text-decoration: none;
+    color: #333333;
 }
