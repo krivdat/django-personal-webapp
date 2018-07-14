@@ -4,8 +4,8 @@
 
      <form method="POST">{% csrf_token %}
         <p>Are you sure you want to delete "{{ object }}"?</p>
-        <input type="submit" value="Confirm" class="save btn btn-danger" />
-        <button type="button"  class="btn btn-default">
+        <input type="submit" value="Confirm"/>
+        <button type="button">
           <a href="{% url 'note-list' %}">Cancel</a>
         </button>
     </form>
