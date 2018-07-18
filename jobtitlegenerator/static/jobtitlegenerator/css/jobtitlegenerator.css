@@ -8,7 +8,7 @@ html, body {
 }
 
 .header {
-    
+  text-align: center;
 }
 
 a {
@@ -21,10 +21,22 @@ a:hover {
 }
 
 .container-main {
-    min-height: 90%;
-    padding: 1em;
+  min-height: 80%;
+  text-align: center;
+}
+
+#jobtitle {
+  border: solid 1px;
+  display: inline-block;
+  padding: 0.5em;
+  color: #5d87b9;
+}
+
+.button-generate {
+  padding: 0.5em;
 }
 
 .footer {
-    margin-left:15px;
+  margin: auto;
+  text-align: center;
 }

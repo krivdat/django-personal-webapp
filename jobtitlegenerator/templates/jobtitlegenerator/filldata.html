@@ -16,18 +16,39 @@
 <header>
         <div class="header">
             <h1>Thomas's Job Title Generator</h1>
+            <h2>Source data entries upload from files</h2>
         </div>
 </header>
 
 <div class="container-main">
 
-<h2 id='jobtitle'>
-    {{ jobtitle }}
-</h2>
+<h3>Adjective 1 - current list of all entries</h3>
+<ul>
+    {% for entry in adj1 %}
+    <li>{{ entry.word }}</li>
+    {% endfor %}
+</ul>
 
-<form action="{% url 'index' %}">
-    <input type="submit" class="button-generate" value="Generate new title" />
-</form>
+<h3>Adjective 2 - current list of all entries</h3>
+<ul>
+    {% for entry in adj2 %}
+    <li>{{ entry.word }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Adjective 3 - current list of all entries</h3>
+<ul>
+    {% for entry in adj3 %}
+    <li>{{ entry.word }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Position - current list of all entries</h3>
+<ul>
+    {% for entry in pos %}
+    <li>{{ entry.word }}</li>
+    {% endfor %}
+</ul>
 
 </div>
 
