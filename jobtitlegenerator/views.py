@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Adjective1, Adjective2, Adjective3, Position
+from mysite.settings import MEDIA_URL
 import random
 
 
@@ -15,25 +16,25 @@ def index(request):
 
 @login_required
 def loaddata(request):
-    with open('jobtitlegenerator/media/adjective1.txt') as f:
+    with open(MEDIA_URL+'adjective1.txt') as f:
         Adjective1.objects.all().delete()
         entries = f.readlines()
         for line in entries:
             new_entry = Adjective1(word = line)
             new_entry.save()
-    with open('jobtitlegenerator/media/adjective2.txt') as f:
+    with open(MEDIA_URL+'adjective2.txt') as f:
         Adjective2.objects.all().delete()
         entries = f.readlines()
         for line in entries:
             new_entry = Adjective2(word = line)
             new_entry.save()
-    with open('jobtitlegenerator/media/adjective3.txt') as f:
+    with open(MEDIA_URL+'adjective3.txt') as f:
         Adjective3.objects.all().delete()
         entries = f.readlines()
         for line in entries:
             new_entry = Adjective3(word = line)
             new_entry.save()
-    with open('jobtitlegenerator/media/position.txt') as f:
+    with open(MEDIA_URL+'position.txt') as f:
         Position.objects.all().delete()
         entries = f.readlines()
         for line in entries:
