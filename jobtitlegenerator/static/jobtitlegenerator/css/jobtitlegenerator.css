@@ -1,0 +1,42 @@
+html, body {
+  height: 100%;
+  max-width: 100%;
+  background-color:#f6f6f6;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+.header {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container-main {
+  min-height: 80%;
+  text-align: center;
+}
+
+#jobtitle {
+  border: solid 1px;
+  display: inline-block;
+  padding: 0.5em;
+  color: #5d87b9;
+}
+
+.button-generate {
+  padding: 0.5em;
+}
+
+.footer {
+  margin: auto;
+  text-align: center;
+}

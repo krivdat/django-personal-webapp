@@ -20,6 +20,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('notes/', include('notes.urls')),
+    path('jobtitlegenerator/', include('jobtitlegenerator.urls')),
     path('accounts/login/', LoginView.as_view(template_name='notes/login.html'), name='login'),
 #   path('', include('notes.urls')),
 ]
