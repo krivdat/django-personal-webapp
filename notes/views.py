@@ -9,7 +9,7 @@ class NoteList(LoginRequiredMixin, ListView):
     model = Note
     context_object_name = 'my_notes'
     def get_queryset(self):
-        return Note.objects.filter(author=self.request.user)
+        return Note.objects.filter(author=self.request.user).order_by('-date_created')
 
 
 class NoteDetail(LoginRequiredMixin, DetailView):
