@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('notes/', include('notes.urls')),
     path('jobtitlegenerator/', include('jobtitlegenerator.urls')),
+    path('flightinfo/', include('flightinfo.urls')),
     path('accounts/login/', LoginView.as_view(template_name='notes/login.html'), name='login'),
 #   path('', include('notes.urls')),
 ]
