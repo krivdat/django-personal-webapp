@@ -15,12 +15,15 @@ def index(request):
         + "&lamax=" + str(locations[loc][2]) \
         + "&lomax=" + str(locations[loc][3])
     # print(query)
-
     response = requests.get(query)
     respjson = json.loads(response.text)
-    flightinfo = []
+    flights = []
     for record in respjson['states']:
         if record[8] is not True: # get only planes not on the ground
-            flightinfo.append(record)
-            
-    return render(request, 'flightinfo/base.html', {'flightinfo': flightinfo, 'loc': loc})
+            flights.append({
+                'Callsign':record[1],
+                'Country':record[2],
+                'Speed':int(record[9]*3.6),
+                'Altitude':int(record[7]) })
+
+    return render(request, 'flightinfo/base.html', {'flights': flights, 'loc': loc})
