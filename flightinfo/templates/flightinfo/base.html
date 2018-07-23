@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Thomas's Flight Informator</title>
+	<meta charset="utf-8" />
+	{% load static %}
+<!--	<link rel="shortcut icon" href="{%  static 'jobtitlegenerator/images/favicon.ico' %}"> -->
+	<link rel='stylesheet' href="{% static 'flightinfo/css/flightinfo.css' %}" type='text/css' />
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<header>
+        <div class="header">
+            <h1>Thomas's Flight Informator</h1>
+        </div>
+</header>
+
+<div class="container-main">
+
+    <h4>Aircrafts in the air within area of {{ loc }}</h4>
+    {% for flight in flights %}
+        <div class="flight">
+            <table>
+							<tr><td>Callsign:</td><td>{{ flight.Callsign }}</td><tr>
+              <tr><td>Country:</td><td>{{ flight.Country }}</td></tr>
+              <tr><td>Speed (km/h):</td><td>{{ flight.Speed }}</td></tr>
+              <tr><td>Altitude (m):</td><td>{{ flight.Altitude }}</td></tr>
+            </table>
+        </div>
+    {% endfor %}
+
+<form action="{% url 'index' %}">
+    <input type="submit" class="button-generate" value="Refresh" />
+</form>
+
+</div>
+
+<footer>
+    <div class="footer">
+        <p>
+        <a href="/admin/">Admin</a> |
+        <a href="https://www.linkedin.com/in/tomas-krivda-01574734" target="_blank">LinkedIn</a> |
+        <a href="https://twitter.com/tomas_krivda" target="_blank">Twitter</a> |
+        <a href="https://www.reddit.com/user/krivdat" target="_blank">Redit</a></p>
+    </div>
+</footer>
+
+</body>
+
+</html>
