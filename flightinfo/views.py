@@ -24,6 +24,7 @@ def index(request):
                 'Callsign':record[1],
                 'Country':record[2],
                 'Speed':int(record[9]*3.6),
-                'Altitude':int(record[7]) })
+                'Altitude':int(record[7]),
+                'VerticalRate':record[11] })
 
     return render(request, 'flightinfo/base.html', {'flights': flights, 'loc': loc})
