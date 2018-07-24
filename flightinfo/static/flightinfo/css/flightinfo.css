@@ -40,9 +40,24 @@ a:hover {
   text-align: center;
 }
 
+div.rise {
+  background-color: #c8e9c6;
+}
+
+div.descent {
+  background-color: #edcbc5;
+}
+
 ul {
   list-style-type: none;
 }
+ td.rise {
+  color: green;
+ }
+
+ td.descent {
+  color: red;
+ }
 
 .button-generate {
   padding: 0.5em;
@@ -51,5 +66,6 @@ ul {
 
 .footer {
   margin: auto;
+  padding-top: 2em;
   text-align: center;
 }

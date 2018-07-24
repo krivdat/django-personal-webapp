@@ -13,6 +13,8 @@
 
 <body>
 
+{% load humanize %}
+
 <header>
         <div class="header">
             <h1>Thomas's Flight Informator</h1>
@@ -23,18 +25,21 @@
 
     <h4>Aircrafts in the air within area of {{ loc }}</h4>
     {% for flight in flights %}
-        <div class="flight">
+        <div class="flight {{ flight.Status }}">
             <table>
-							<tr><td>Callsign:</td><td>{{ flight.Callsign }}</td><tr>
-              <tr><td>Country:</td><td>{{ flight.Country }}</td></tr>
-              <tr><td>Speed (km/h):</td><td>{{ flight.Speed }}</td></tr>
-              <tr><td>Altitude (m):</td><td>{{ flight.Altitude }}</td></tr>
-							<tr><td>Vertical speed (m/s):</td><td>{{ flight.VerticalRate }}</td></tr>
+				<tr><td>Callsign:</td><td><b>{{ flight.Callsign }}</b></td><tr>
+                <tr><td>Country:</td><td>{{ flight.Country }}</td></tr>
+                <tr><td>Speed (km/h):</td><td>{{ flight.Speed|intcomma }}</td></tr>
+                <tr><td>Altitude (m):</td><td>{{ flight.Altitude|intcomma }}</td></tr>
+				<tr>
+                    <td>Vertical speed (m/s):</td>
+                    <td class="{{ flight.Status }}">{{ flight.VerticalRate|intcomma }}</td>
+                </tr>
             </table>
         </div>
     {% endfor %}
 
-<form action="{% url 'index' %}">
+<form action="{{ request.get_full_path }}">
     <input type="submit" class="button-generate" value="Refresh" />
 </form>
 
@@ -42,7 +47,6 @@
 
 <footer>
     <div class="footer">
-        <p>
         <a href="/admin/">Admin</a> |
         <a href="https://www.linkedin.com/in/tomas-krivda-01574734" target="_blank">LinkedIn</a> |
         <a href="https://twitter.com/tomas_krivda" target="_blank">Twitter</a> |
