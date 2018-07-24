@@ -4,9 +4,10 @@ import requests
 locations = { # lamin,lomin,lamax,lomax
     "Switzerland": [45.8389,5.9962,47.8229,10.5226],
     "Prague": [49.8604,14.0617,50.2457,14.9653],
+    "Kosice": [48.6136,21.1367,48.7790,21.3547],
 }
 
-loc = "Prague"
+loc = "Kosice"
 query = "https://opensky-network.org/api/states/all?" \
     + "lamin=" + str(locations[loc][0]) \
     + "&lomin=" + str(locations[loc][1]) \

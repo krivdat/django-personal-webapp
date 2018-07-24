@@ -69,3 +69,9 @@ ul {
   padding-top: 2em;
   text-align: center;
 }
+
+span.quick-locations {
+  padding: 0.2em 1em;
+  border: dotted 1px #332e2e;
+  border-radius: 3px;
+}

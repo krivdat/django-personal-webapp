@@ -17,13 +17,13 @@
 
 <header>
         <div class="header">
-            <h1>Thomas's Flight Informator</h1>
+            <h1>Thomas's Flight Info</h1>
         </div>
 </header>
 
 <div class="container-main">
 
-    <h4>Aircrafts in the air within area of {{ loc }}</h4>
+    <h4>Aircrafts currently in the air within area of {{ loc }}</h4>
     {% for flight in flights %}
         <div class="flight {{ flight.Status }}">
             <table>
@@ -39,9 +39,15 @@
         </div>
     {% endfor %}
 
-<form action="{{ request.get_full_path }}">
-    <input type="submit" class="button-generate" value="Refresh" />
-</form>
+	<form action="{{ request.get_full_path }}">
+	    <input type="submit" class="button-generate" value="Refresh" />
+	</form>
+
+	<p>Some popular locations:</p>
+	<a href="{% url 'flightinfo:index' loc='Prague' %}"><span class="quick-locations">Prague</span></a>
+	<a href="{% url 'flightinfo:index' loc='Bratislava' %}"><span class="quick-locations">Bratislava</span></a>
+	<a href="{% url 'flightinfo:index' loc='Kosice' %}"><span class="quick-locations">Kosice</span></a>
+	<a href="{% url 'flightinfo:index' loc='Switzerland' %}"><span class="quick-locations">Switzerland</span></a>
 
 </div>
 
